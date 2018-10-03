@@ -4,9 +4,9 @@
 # the file "sampling.txt" every 5 seconds until
 # user interupts
 
+touch sampling.txt
 while :
 do
-    touch sampling.txt
     date +"%T" > sampling.txt
     sleep 5
 done
