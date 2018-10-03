@@ -7,6 +7,6 @@
 while :
 do
     touch sampling.txt
-    date > sampling.txt
+    date +"%T" > sampling.txt
     sleep 5
 done
