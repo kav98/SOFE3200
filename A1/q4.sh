@@ -12,4 +12,4 @@ grep -oe "London" -e "Paris" ATaleofTwoCities.txt | wc -l
 
 #QUESTION 4c
 printf "\nQUESTION 4c -\n"
-grep -o [aeiouAEIOU] ATaleofTwoCities.txt AliceInWonderland.txt | wc -l
+printf ("%d" % grep -o [aeiouAEIOU] ATaleofTwoCities.txt AliceInWonderland.txt | wc -l)
