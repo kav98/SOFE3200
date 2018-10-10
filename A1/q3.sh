@@ -30,11 +30,7 @@ do
 done
 end=`date +%s`
 runtime=$((end-start))
-echo $runtime
 filename="$(date +"%m%d%Y")"
-echo $filename
 filename+="-"$runtime"-"
-echo $filename
 filename+=$name".txt"
-echo $filename
 touch $filename
