@@ -24,4 +24,4 @@ printf "New files with \'the\' replaced with \'ABC' created.\n"
 
 #QUESTION 4d
 printf "\nQUESTION 4d -\n"
-grep -o . ATaleofTwoCities.txt AliceInWonderland.txt | sort -u
+grep -o . ATaleofTwoCities.txt | sort -u
