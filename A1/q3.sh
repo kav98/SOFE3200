@@ -11,7 +11,6 @@ do
     case $i in
     1)
         printf "Can pigs fly?\n0: TRUE\n1: FALSE\n"
-        ans1 = "0"
     ;;
     2)
         printf "Do most humans have feet?\n0: TRUE\n1: FALSE\n"
@@ -31,7 +30,11 @@ do
 done
 end=`date +%s`
 runtime=$((end-start))
-filename=$ date +"%D"
+echo $runtime
+filename="$(date +"%m%d%Y")"
+echo $filename
 filename+="-"$runtime"-"
+echo $filename
 filename+=$name".txt"
-touch /q3Records $filename
+echo $filename
+touch $filename
