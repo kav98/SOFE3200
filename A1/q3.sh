@@ -48,7 +48,7 @@ touch $filename
 
 printf "Runtime: $runtime seconds\n"
 printf "Overall Score $score/5\n"
-printf "All items are relased in the file: $filename"
+printf "All items are relased in the file: $filename\n"
 
 printf "Runtime: $runtime seconds\n" >> $filename
 printf "Overall Score $score/5\n\n" >> $filename
