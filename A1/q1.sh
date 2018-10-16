@@ -14,3 +14,4 @@ echo "Please Try Yourself -"
 read -p "String: " STRING
 read -p "Check:  " CHECK
 echo $STRING | grep -o "$CHECK" | wc -l  
+#Checks the input string with grep and counts the occurrences with wc

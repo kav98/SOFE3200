@@ -2,10 +2,10 @@
 
 # 
 
+# user input to store file name later
 read -p "Please input your name: " name
 start=`date +%s`
-# input=()
-# score=0
+
 for i in {1..5};
 do
     case $i in
@@ -40,12 +40,13 @@ do
 done
 echo $input
 end=`date +%s`
-runtime=$((end-start))
+runtime=$((end-start)) #calculate runtime with start and end times of test
 filename="$(date +"%m%d%Y")"
 filename+="-"$runtime"-"
 filename+=$name".txt"
 touch $filename
 
+#Output to files with >
 printf "Runtime: $runtime seconds\n"
 printf "Overall Score $score/5\n"
 printf "All items are relased in the file: $filename\n"
@@ -72,3 +73,4 @@ printf "Your answer: ${input:3:1}\n\n" >> $filename
 printf "Is the TA going to give me 100%%?\n0: YES\n1: NO\n" >> $filename
 printf "Correct answer: 0\n" >> $filename
 printf "Your answer: ${input:4:1}\n\n" >> $filename
+#OUTPUT TO FILES WITH >

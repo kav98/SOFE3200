@@ -10,3 +10,5 @@ do
     date +"%T" > sampling.txt
     sleep 5
 done
+# while loop and take breaks for 5 seconds at a time with sleep
+# date format is output in string notation to file sampling.txt
