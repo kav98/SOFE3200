@@ -39,7 +39,7 @@ echo "Next Leap Year Down is " $CurrentYearDown
 
 deltaUp=$(($CurrentYearUp-$currYear))
 deltaDown=$(($currYear-$CurrentYearDown))
-if [ $deltaUp -lt $deltaDown ]
+if [ $deltaUp -le $deltaDown ]
 then
     leap=$CurrentYearUp
 else
