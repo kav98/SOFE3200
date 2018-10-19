@@ -1,11 +1,12 @@
 #!/bin/bash
 
-leapYear(){
-    if [ $(($1%4)) -eq 0 ] && [ $(($1%100)) -ne 0 ]
+leapYear() {
+    # echo $1
+    if [ $(($1%4)) -eq "0" ] && [ $(($1%100)) -ne "0" ]
     then 
-        echo "1"
+        isLeap=1
     else
-        echo "0"
+        isLeap=0
     fi
 }
 
@@ -16,10 +17,33 @@ else
     echo $1" is NOT a leap year."
 fi
 
-Leap=""
+currYear=$(date +"%Y")
+echo "Current year is: " $currYear
+isLeap=0
+CurrentYearUp=$(date +"%Y")
+while [ $isLeap -eq "0" ]
+do
+    CurrentYearUp=$(($CurrentYearUp+1))
+    leapYear $CurrentYearUp
+done
+echo "Next Leap Year up is " $CurrentYearUp
 
-isLeap
-while [  ]
+isLeap=0
+CurrentYearDown=$(date +"%Y")
+while [ $isLeap -eq "0" ]
+do
+    CurrentYearDown=$(($CurrentYearDown-1))
+    leapYear $CurrentYearDown
+done
+echo "Next Leap Year Down is " $CurrentYearDown
 
-echo "Current date is: " $(date)
-echo "Nearest Leap Year is: "$Leap
+deltaUp=$(($CurrentYearUp-$currYear))
+deltaDown=$(($currYear-$CurrentYearDown))
+if [ $deltaUp -lt $deltaDown ]
+then
+    leap=$CurrentYearUp
+else
+    leap=$CurrentYearDown
+fi
+
+echo "Nearest Leap Year is: " $leap
