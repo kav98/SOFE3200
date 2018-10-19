@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# Function to check if year sent as argument is a leap year or not
+# Returns a 
 leapYear() {
     # echo $1
     if [ $(($1%4)) -eq "0" ] && [ $(($1%100)) -ne "0" ]
@@ -10,6 +12,7 @@ leapYear() {
     fi
 }
 
+echo "Question Number 5: "
 if [ $(($1%4)) -eq 0 ] && [ $(($1%100)) -ne 0 ]
 then 
     echo $1" is a leap year."
@@ -17,6 +20,8 @@ else
     echo $1" is NOT a leap year."
 fi
 
+echo ""
+echo "Question Number 6:"
 currYear=$(date +"%Y")
 echo "Current year is: " $currYear
 isLeap=0
