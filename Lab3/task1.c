@@ -6,8 +6,7 @@ int main ()
     while (1){
         if (file != NULL){
             break; // file exists so break
-        }
-        else{
+        } else {
             printf("File does not exist!\n"); // File not found if NULL
             perror("FileNotFound");
             exit(1); //so exit
