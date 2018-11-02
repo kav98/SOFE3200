@@ -6,10 +6,8 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
-#define HOW_BIG_IS_MY_BUFFER 1024
-
 void replaceAll(char *stringToReplace, const char *wordToReplace, const char *replaceWith) {
-    char t[HOW_BIG_IS_MY_BUFFER], * p;
+    char t[1024], * p;
     int i = 0;
     while ((p = strstr(stringToReplace, wordToReplace)) != NULL) {
         strcpy(t, stringToReplace);
