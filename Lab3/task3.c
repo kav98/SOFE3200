@@ -6,7 +6,7 @@
 
 void main()
 {
-    
+
     char parentBuff[1024];
     char childBuff[1024];
     int fd[2], file, bytes, eFile;
@@ -14,7 +14,7 @@ void main()
     pipe(fd);
 
     if(fork()) {
-    //Parent closes read
+    //Parent closes write
     close(fd[0]);
     file = open("input.txt", O_RDONLY);
     bytes = read(file, parentBuff, sizeof(parentBuff));
@@ -22,7 +22,7 @@ void main()
     // Puts data in pipe
     write(fd[1], parentBuff, bytes);
     } else {
-    // Child closes write
+    // Child closes read
     close(fd[1]);
 
     read(fd[0], childBuff, sizeof(childBuff)); //reads from pipe
