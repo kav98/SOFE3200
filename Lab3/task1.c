@@ -2,18 +2,18 @@
 #include <stdlib.h>
 int main ()
 {
-    FILE* file = fopen("input.txt", "r"); //read file
+    FILE* file = fopen("input.txt", "r"); // read file
     while (1){
         if (file != NULL){
-            break; //file exists so break
+            break; // file exists so break
         }
         else{
-            printf("File does not exist!\n"); //File not found if NULL
+            printf("File does not exist!\n"); // File not found if NULL
             exit(12); //so exit
         }
     }
 
-    FILE* newFile = fopen("Heaven.txt", "w");
+    FILE* newFile = fopen("Heaven.txt", "w"); // create new file to write
 
     char line[512];
     char eLine[512]; //edited line
