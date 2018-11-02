@@ -9,7 +9,8 @@ int main ()
         }
         else{
             printf("File does not exist!\n"); // File not found if NULL
-            exit(12); //so exit
+            perror("FileNotFound");
+            exit(1); //so exit
         }
     }
 
