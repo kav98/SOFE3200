@@ -4,6 +4,19 @@
 #include <unistd.h>
 #include <string.h>
 
+void replaceAll(char *stringToReplace, const char *wordToReplace, const char *replaceWith) {
+    char t[1024], * p;
+    int i = 0;
+    while ((p = strstr(stringToReplace, wordToReplace)) != NULL) {
+        strcpy(t, stringToReplace);
+        i = p - stringToReplace;
+        stringToReplace[i] = '\0';
+        strcat(stringToReplace, replaceWith);
+        strcat(stringToReplace, t + i + strlen(wordToReplace));
+    }
+}
+
+
 void main()
 {
     
