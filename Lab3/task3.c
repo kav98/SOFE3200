@@ -41,6 +41,16 @@ void main()
     read(fd[0], childBuff, sizeof(childBuff)); //reads from pipe
     close(fd[0]);
 
+    replaceAll(childBuff, "Inferno", "Paradisio");
+    replaceAll(childBuff, "In dark woods", "using Windows 8.1");
+    replaceAll(childBuff, "those woods", "Windows 8.1");
+    replaceAll(childBuff, "to enter", "to use 8.1");
+    replaceAll(childBuff, "crest", "screen");
+    replaceAll(childBuff, "Below a hill", "Before a monitor");
+    replaceAll(childBuff, "shoulders", "GUI");
+    replaceAll(childBuff, "planet", "UNIX");
+    replaceAll(childBuff, "dante", "Shakespeare");
+
     printf("%s", childBuff);
     eFile = open("Dante.txt", O_CREAT | O_WRONLY | O_TRUNC, 0666);
     write(eFile, childBuff, strlen(childBuff)-1);
