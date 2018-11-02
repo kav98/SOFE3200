@@ -29,7 +29,7 @@ void main()
     if(fork()) {
     //Parent closes write
     close(fd[0]);
-    file = open("input.txt", O_RDONLY);
+    file = open("AliceInWonderland.txt", O_RDONLY);
     bytes = read(file, parentBuff, sizeof(parentBuff));
 
     // Puts data in pipe
